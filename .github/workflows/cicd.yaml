@@ -25,7 +25,7 @@ jobs:
 
       - name: Update Kubernetes manifest with new image tag
         run: |
-          sed -i "s|image: .*/upload-server:.*|image: ${{ secrets.DOCKER_USERNAME }}/upload-server:${IMAGE_TAG}|" k8s/deployment.yaml
+          sed -i "s|image: .*/upload-server:.*|image: ${{ secrets.DOCKER_USERNAME }}/upload-server:${IMAGE_TAG}|" deployment.yaml
 
       - name: Commit and push updated manifest
         run: |
