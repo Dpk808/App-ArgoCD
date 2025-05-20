@@ -33,4 +33,5 @@ jobs:
           git config user.email "actions@github.com"
           git add deployment.yaml
           git commit -m "Update image tag to ${IMAGE_TAG}"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT_ARGOCD }}@github.com/${{ github.repository }}
           git push
