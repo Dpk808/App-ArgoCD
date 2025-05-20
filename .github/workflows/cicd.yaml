@@ -27,6 +27,11 @@ jobs:
         run: |
           sed -i "s|image: .*/upload-server:.*|image: ${{ secrets.DOCKER_USERNAME }}/upload-server:${IMAGE_TAG}|" deployment.yaml
 
+      - name: Check permissions and remotes
+        run: |
+          git remote -v
+          curl -H "Authorization: token ${{ secrets.GH_PAT }}" https://api.github.com/user/repos
+
       - name: Commit and push updated manifest
         run: |
           git config user.name "GitHub Actions"
