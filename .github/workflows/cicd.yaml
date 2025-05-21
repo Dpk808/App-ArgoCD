@@ -1,7 +1,7 @@
 name: CI/CD with ArgoCD
 
 on:
-  push:
+  push: #changed
     branches:
       - master   # updated from main
 
