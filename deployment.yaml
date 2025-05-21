@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: upload-server
-          image: deepakk2212/upload-server:v2
+          image: deepakk2212/upload-server:1747822622
           ports:
             - containerPort: 80
           volumeMounts:
